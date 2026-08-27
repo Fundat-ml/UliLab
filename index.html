@@ -3,11 +3,430 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ULI LAB</title>
+
+    <title>UliLab | Biología Molecular</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #071827;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* BARRA DE NAVEGACIÓN */
+
+        nav {
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #081d2d;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #55e6c1;
+        }
+
+        nav a {
+            color: #dce8ee;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #55e6c1;
+        }
+
+        /* PORTADA */
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            background:
+                radial-gradient(circle at 20% 30%, #0e4c5c 0%, transparent 35%),
+                radial-gradient(circle at 80% 70%, #183f68 0%, transparent 35%),
+                #071827;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 10vw, 100px);
+            color: #55e6c1;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+
+        .hero h2 {
+            font-size: clamp(22px, 4vw, 38px);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #b9cbd4;
+            font-size: 20px;
+            max-width: 650px;
+            margin: 0 auto 35px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #55e6c1;
+            color: #071827;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            background: #7ff5d6;
+        }
+
+        /* SECCIONES */
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #9fb4bf;
+            max-width: 650px;
+            margin: 0 auto 50px;
+        }
+
+        /* TARJETAS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: #0d2638;
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,0.07);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: #55e6c1;
+        }
+
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #55e6c1;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #aebfc8;
+        }
+
+        /* SOBRE EL LABORATORIO */
+
+        .about {
+            background: #0a2030;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            color: #c0d0d8;
+            font-size: 18px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #05131f;
+            color: #78909c;
+            font-size: 14px;
+        }
+
+        /* CELULAR */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+            }
+
+            .hero {
+                min-height: 70vh;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>¡Hola! 👋</h1>
-    <p>Esta es mi primera página web hecha con GitHub.</p>
+
+    <!-- NAVEGACIÓN -->
+
+    <nav>
+        <div class="logo">UliLab</div>
+
+        <div>
+            <a href="#investigacion">Investigación</a>
+            <a href="#codigo">Código</a>
+            <a href="#estudiantes">Estudiantes</a>
+            <a href="#tiktok">TikTok</a>
+        </div>
+    </nav>
+
+
+    <!-- PORTADA -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <h1>UliLab</h1>
+
+            <h2>Laboratorio de Biología Molecular</h2>
+
+            <p>
+                Investigación, ciencia y tecnología desde
+                la Universidad Autónoma Metropolitana,
+                Unidad Iztapalapa.
+            </p>
+
+            <a href="#investigacion" class="button">
+                Conoce nuestra investigación
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- SOBRE EL LABORATORIO -->
+
+    <section class="about">
+
+        <h2 class="section-title">
+            🧬 ¿Qué hacemos?
+        </h2>
+
+        <p>
+            En UliLab exploramos preguntas de Biología Molecular
+            relacionadas con los procesos que ocurren a nivel
+            celular y molecular. Nuestro trabajo abarca diferentes
+            líneas de investigación relacionadas con la biología,
+            la genética y la salud.
+        </p>
+
+    </section>
+
+
+    <!-- INVESTIGACIÓN -->
+
+    <section id="investigacion">
+
+        <h2 class="section-title">
+            🔬 Investigación
+        </h2>
+
+        <p class="section-subtitle">
+            Conoce los proyectos y preguntas científicas
+            que se investigan en nuestro laboratorio.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">🧬</div>
+                <h3>Biología Molecular</h3>
+                <p>
+                    Estudiamos procesos biológicos desde
+                    una perspectiva molecular y celular.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🥑</div>
+                <h3>Alergias</h3>
+                <p>
+                    Investigación de los mecanismos
+                    moleculares relacionados con respuestas
+                    alérgicas.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🧪</div>
+                <h3>Salud y enfermedad</h3>
+                <p>
+                    Exploramos procesos moleculares
+                    relacionados con diferentes enfermedades.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🧫</div>
+                <h3>Genética y ADN</h3>
+                <p>
+                    Estudiamos información genética y
+                    mecanismos relacionados con el ADN.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CÓDIGO -->
+
+    <section id="codigo" class="about">
+
+        <h2 class="section-title">
+            💻 Ciencia + Código
+        </h2>
+
+        <p>
+            La investigación moderna también utiliza herramientas
+            computacionales. Aquí podrás encontrar códigos,
+            análisis y proyectos desarrollados durante nuestras
+            investigaciones.
+        </p>
+
+    </section>
+
+
+    <!-- ESTUDIANTES -->
+
+    <section id="estudiantes">
+
+        <h2 class="section-title">
+            🎓 Para estudiantes
+        </h2>
+
+        <p class="section-subtitle">
+            Queremos acercar la ciencia y la investigación
+            a quienes tienen curiosidad por descubrir cómo
+            funciona la vida.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">🔬</div>
+                <h3>Aprende</h3>
+                <p>
+                    Descubre conceptos de Biología Molecular
+                    explicados de manera sencilla.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <h3>Investiga</h3>
+                <p>
+                    Conoce proyectos y oportunidades
+                    relacionadas con la investigación.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💡</div>
+                <h3>Pregunta</h3>
+                <p>
+                    La curiosidad es el primer paso
+                    para hacer ciencia.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TIKTOK -->
+
+    <section id="tiktok" class="about">
+
+        <h2 class="section-title">
+            🎥 Ciencia en TikTok
+        </h2>
+
+        <p>
+            La ciencia también puede ser divertida,
+            accesible y estar en redes sociales.
+            Próximamente encontrarás aquí nuestros
+            contenidos de divulgación científica.
+        </p>
+
+        <br>
+
+        <a href="#" class="button">
+            Visitar TikTok
+        </a>
+
+    </section>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <p>
+            UliLab · Biología Molecular
+        </p>
+
+        <p>
+            Universidad Autónoma Metropolitana · Unidad Iztapalapa
+        </p>
+
+    </footer>
+
 </body>
 </html>
