@@ -114,6 +114,36 @@
             transform: translateY(-3px);
             background: #7ff5d6;
         }
+        .hero-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(85, 230, 193, 0.4);
+    border-radius: 30px;
+    color: #55e6c1;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.secondary-button {
+    background: transparent;
+    color: #55e6c1;
+    border: 1px solid #55e6c1;
+}
+
+.secondary-button:hover {
+    background: #55e6c1;
+    color: #071827;
+}
+
 
         /* SECCIONES */
 
@@ -267,12 +297,15 @@
         <div class="logo">UliLab</div>
 
         <div>
-         <a href="#investigacion">Investigación</a>
+        <a href="#sobre">Sobre UliLab</a>
+        <a href="#investigacion">Investigación</a>
         <a href="#codigo">Código</a>
         <a href="#publicaciones">Publicaciones</a>
         <a href="#estudiantes">Estudiantes</a>
         <a href="#equipo">Equipo</a>
         <a href="#tiktok">TikTok</a>
+        <a href="#contacto">Contacto</a>
+
 
         </div>
     </nav>
@@ -280,27 +313,42 @@
 
     <!-- PORTADA -->
 
-    <header class="hero">
+<header class="hero">
 
-        <div class="hero-content">
+    <div class="hero-content">
 
-            <h1>UliLab</h1>
+        <div class="hero-tag">
+            🧬 BIOLOGÍA MOLECULAR · UAM IZTAPALAPA
+        </div>
 
-            <h2>Laboratorio de Biología Molecular</h2>
+        <h1>UliLab</h1>
 
-            <p>
-                Investigación, ciencia y tecnología desde
-                la Universidad Autónoma Metropolitana,
-                Unidad Iztapalapa.
-            </p>
+        <h2>
+            Investigación que explora
+            la vida a escala molecular.
+        </h2>
+
+        <p>
+            Un espacio de investigación, formación y
+            divulgación científica desde la Universidad
+            Autónoma Metropolitana, Unidad Iztapalapa.
+        </p>
+
+        <div class="hero-buttons">
 
             <a href="#investigacion" class="button">
-                Conoce nuestra investigación
+                Explorar investigación
+            </a>
+
+            <a href="#sobre" class="button secondary-button">
+                Conocer UliLab
             </a>
 
         </div>
 
-    </header>
+    </div>
+
+</header>
 
 
     <!-- SOBRE EL LABORATORIO -->
@@ -689,6 +737,68 @@
 
     </section>
 
+<!-- CONTACTO -->
+
+<section id="contacto">
+
+    <h2 class="section-title">
+        📍 Ubicación y contacto
+    </h2>
+
+    <p class="section-subtitle">
+        Encuentra UliLab en la Universidad Autónoma Metropolitana,
+        Unidad Iztapalapa.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">📍</div>
+
+            <h3>Ubicación</h3>
+
+            <p>
+                Universidad Autónoma Metropolitana<br>
+                Unidad Iztapalapa<br>
+                Ciudad de México
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">✉️</div>
+
+            <h3>Contacto</h3>
+
+            <p>
+                Próximamente encontrarás aquí
+                el correo oficial de contacto
+                de UliLab.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🔗</div>
+
+            <h3>Enlaces</h3>
+
+            <p>
+                Sitio institucional, redes sociales
+                y otros espacios donde puedes
+                conocer nuestro trabajo.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
     <!-- PIE DE PÁGINA -->
 
