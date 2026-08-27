@@ -1,16 +1,27 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>UliLab | Biología Molecular</title>
 
     <style>
+
+        /* =========================
+           CONFIGURACIÓN GENERAL
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -19,29 +30,26 @@
             color: white;
             line-height: 1.6;
         }
-        .card-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: #55e6c1;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .card-link:hover {
-            color: #7ff5d6;
-        }
 
 
-        /* BARRA DE NAVEGACIÓN */
+        /* =========================
+           NAVEGACIÓN
+        ========================= */
 
         nav {
             width: 100%;
             padding: 20px 8%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             background: #081d2d;
             border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo {
@@ -53,105 +61,149 @@
         nav a {
             color: #dce8ee;
             text-decoration: none;
-            margin-left: 25px;
+            margin-left: 22px;
             font-size: 15px;
+            transition: 0.3s;
         }
 
         nav a:hover {
             color: #55e6c1;
         }
 
-        /* PORTADA */ 
 
-               .hero {
+        /* =========================
+           PORTADA
+        ========================= */
+
+        .hero {
             min-height: 75vh;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             text-align: center;
+
             padding: 80px 20px;
-    
+
             background:
-                radial-gradient(circle at 20% 30%, #0e4c5c 0%, transparent 35%),
-                radial-gradient(circle at 80% 70%, #183f68 0%, transparent 35%),
+                radial-gradient(
+                    circle at 20% 30%,
+                    #0e4c5c 0%,
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    #183f68 0%,
+                    transparent 35%
+                ),
                 #071827;
-            }
-
-
-         .hero-tag {
-            display: inline-block;
-            padding: 8px 16px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(85, 230, 193, 0.4);
-            border-radius: 30px;
-              color: #55e6c1;
-            font-size: 13px;
-                font-weight: bold;
-             letter-spacing: 1px;
-        }
-
-         .hero-buttons {
-             display: flex;
-            justify-content: center;
-               gap: 15px;
-            flex-wrap: wrap;
-        }
-
-         .secondary-button {
-            background: transparent;
-            color: #55e6c1;
-            border: 1px solid #55e6c1;
-        }
-
-        .secondary-button:hover {
-            background: #55e6c1;
-            color: #071827;
         }
 
         .hero-content {
-              max-width: 850px;
+            max-width: 850px;
         }
 
+        .hero-tag {
+            display: inline-block;
 
+            padding: 8px 16px;
+            margin-bottom: 25px;
 
-      
+            border: 1px solid rgba(85,230,193,0.4);
+            border-radius: 30px;
+
+            color: #55e6c1;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            letter-spacing: 1px;
+        }
+
         .hero h1 {
             font-size: clamp(55px, 10vw, 100px);
+
             color: #55e6c1;
+
             margin-bottom: 10px;
+
             letter-spacing: 3px;
         }
 
         .hero h2 {
             font-size: clamp(22px, 4vw, 38px);
+
             margin-bottom: 20px;
         }
 
         .hero p {
             color: #b9cbd4;
+
             font-size: 20px;
+
             max-width: 650px;
+
             margin: 0 auto 35px;
         }
 
+        .hero-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+
+        /* =========================
+           BOTONES
+        ========================= */
+
         .button {
             display: inline-block;
+
             padding: 14px 28px;
+
             background: #55e6c1;
+
             color: #071827;
+
             text-decoration: none;
+
             border-radius: 30px;
+
             font-weight: bold;
+
             transition: 0.3s;
         }
 
         .button:hover {
             transform: translateY(-3px);
+
             background: #7ff5d6;
         }
 
+        .secondary-button {
+            background: transparent;
 
-        /* SECCIONES */
+            color: #55e6c1;
+
+            border: 1px solid #55e6c1;
+        }
+
+        .secondary-button:hover {
+            background: #55e6c1;
+
+            color: #071827;
+        }
+
+
+        /* =========================
+           SECCIONES
+        ========================= */
 
         section {
             padding: 80px 8%;
@@ -159,47 +211,72 @@
 
         .section-title {
             text-align: center;
+
             font-size: 38px;
+
             margin-bottom: 15px;
         }
 
         .section-subtitle {
             text-align: center;
+
             color: #9fb4bf;
+
             max-width: 650px;
+
             margin: 0 auto 50px;
         }
 
-        /* TARJETAS */
+
+        /* =========================
+           TARJETAS
+        ========================= */
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(220px, 1fr)
+                );
+
             gap: 25px;
+
             max-width: 1100px;
+
             margin: auto;
         }
 
         .card {
             background: #0d2638;
+
             padding: 30px;
+
             border-radius: 18px;
-            border: 1px solid rgba(255,255,255,0.07);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
+
             transition: 0.3s;
         }
 
         .card:hover {
             transform: translateY(-7px);
+
             border-color: #55e6c1;
         }
 
         .card-icon {
             font-size: 40px;
+
             margin-bottom: 15px;
         }
 
         .card h3 {
             color: #55e6c1;
+
             margin-bottom: 10px;
         }
 
@@ -207,520 +284,816 @@
             color: #aebfc8;
         }
 
-        /* SOBRE EL LABORATORIO */
+        .card-link {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            color: #55e6c1;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+        .card-link:hover {
+            color: #7ff5d6;
+        }
+
+
+        /* =========================
+           SOBRE ULILAB
+        ========================= */
 
         .about {
             background: #0a2030;
+
             text-align: center;
         }
 
         .about p {
             max-width: 800px;
+
             margin: auto;
+
             color: #c0d0d8;
+
             font-size: 18px;
         }
 
-        /* FOOTER */
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             text-align: center;
+
             padding: 30px;
+
             background: #05131f;
+
             color: #78909c;
+
             font-size: 14px;
         }
 
-        /* CELULAR */
+
+        /* =========================
+           VERSIÓN PARA CELULAR
+        ========================= */
 
         @media (max-width: 700px) {
 
-    nav {
-        flex-direction: column;
-        gap: 15px;
-        padding: 18px 5%;
-    }
+            nav {
+                flex-direction: column;
 
-    .logo {
-        font-size: 26px;
-    }
+                gap: 15px;
 
-    nav div:last-child {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
+                padding: 18px 5%;
+            }
 
-    nav a {
-        margin: 0;
-        font-size: 14px;
-    }
+            .logo {
+                font-size: 26px;
+            }
 
-    .hero {
-        min-height: 70vh;
-        padding: 60px 20px;
-    }
+            nav div:last-child {
+                display: flex;
 
-    .hero h1 {
-        font-size: 60px;
-    }
+                flex-wrap: wrap;
 
-    .hero h2 {
-        font-size: 24px;
-    }
+                justify-content: center;
 
-    .hero p {
-        font-size: 17px;
-    }
+                gap: 10px;
+            }
 
-    section {
-        padding: 60px 6%;
-    }
+            nav a {
+                margin: 0;
 
-    .section-title {
-        font-size: 30px;
-    }
+                font-size: 14px;
+            }
 
-    .section-subtitle {
-        font-size: 16px;
-    }
+            .hero {
+                min-height: 70vh;
 
-    .cards {
-        grid-template-columns: 1fr;
-    }
+                padding: 60px 20px;
+            }
 
-    .card {
-        padding: 25px;
-    }
+            .hero h1 {
+                font-size: 60px;
+            }
 
-}
+            .hero h2 {
+                font-size: 24px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .section-subtitle {
+                font-size: 16px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
 
 
-    <!-- NAVEGACIÓN -->
+<body>
+
+
+    <!-- =========================
+         NAVEGACIÓN
+    ========================= -->
 
     <nav>
-        <div class="logo">UliLab</div>
+
+        <div class="logo">
+            UliLab
+        </div>
 
         <div>
-        <a href="#sobre">Sobre UliLab</a>
-        <a href="#investigacion">Investigación</a>
-        <a href="#codigo">Código</a>
-        <a href="#publicaciones">Publicaciones</a>
-        <a href="#estudiantes">Estudiantes</a>
-        <a href="#equipo">Equipo</a>
-        <a href="#tiktok">TikTok</a>
-        <a href="#contacto">Contacto</a>
 
+            <a href="#sobre">
+                Sobre UliLab
+            </a>
+
+            <a href="#investigacion">
+                Investigación
+            </a>
+
+            <a href="#codigo">
+                Código
+            </a>
+
+            <a href="#publicaciones">
+                Publicaciones
+            </a>
+
+            <a href="#estudiantes">
+                Estudiantes
+            </a>
+
+            <a href="#equipo">
+                Equipo
+            </a>
+
+            <a href="#tiktok">
+                TikTok
+            </a>
+
+            <a href="#contacto">
+                Contacto
+            </a>
 
         </div>
+
     </nav>
 
 
-    <!-- PORTADA -->
+    <!-- =========================
+         PORTADA
+    ========================= -->
 
-<header class="hero">
+    <header class="hero">
 
-    <div class="hero-content">
+        <div class="hero-content">
 
-        <div class="hero-tag">
-            🧬 BIOLOGÍA MOLECULAR · UAM IZTAPALAPA
+            <div class="hero-tag">
+                🧬 BIOLOGÍA MOLECULAR · UAM IZTAPALAPA
+            </div>
+
+            <h1>
+                UliLab
+            </h1>
+
+            <h2>
+                Investigación que explora
+                la vida a escala molecular.
+            </h2>
+
+            <p>
+                Un espacio de investigación, formación y
+                divulgación científica desde la Universidad
+                Autónoma Metropolitana, Unidad Iztapalapa.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#investigacion"
+                    class="button"
+                >
+                    Explorar investigación
+                </a>
+
+                <a
+                    href="#sobre"
+                    class="button secondary-button"
+                >
+                    Conocer UliLab
+                </a>
+
+            </div>
+
         </div>
 
-        <h1>UliLab</h1>
-
-        <h2>
-            Investigación que explora
-            la vida a escala molecular.
-        </h2>
-
-        <p>
-            Un espacio de investigación, formación y
-            divulgación científica desde la Universidad
-            Autónoma Metropolitana, Unidad Iztapalapa.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#investigacion" class="button">
-                Explorar investigación
-            </a>
-
-            <a href="#sobre" class="button secondary-button">
-                Conocer UliLab
-            </a>
-
-        </div>
-
-    </div>
-
-</header>
+    </header>
 
 
-    <!-- SOBRE EL LABORATORIO -->
+    <!-- =========================
+         SOBRE ULILAB
+    ========================= -->
 
-    <section class="about">
+    <section
+        id="sobre"
+        class="about"
+    >
 
         <h2 class="section-title">
-            🧬 ¿Qué hacemos?
+            🧬 Sobre UliLab
         </h2>
 
         <p>
-    
-            Nuestra investigación se centra en la transducción de señales 
-            en hongos filamentosos de interés biotecnológico.
-            para lo cual emplea técnicas avanzadas de Biología Molecular y Proteómica.
+            UliLab es un espacio dedicado a la investigación,
+            formación y divulgación en Biología Molecular
+            desde la Universidad Autónoma Metropolitana,
+            Unidad Iztapalapa.
+        </p>
+
+        <br>
+
+        <p>
+            Nuestra investigación se centra en la transducción
+            de señales en hongos filamentosos de interés
+            biotecnológico, empleando herramientas de
+            Biología Molecular y Proteómica.
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Investigador/a responsable:</strong>
+            Próximamente.
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Historia del laboratorio:</strong>
+            Próximamente.
         </p>
 
     </section>
 
 
-    <!-- INVESTIGACIÓN -->
+    <!-- =========================
+         INVESTIGACIÓN
+    ========================= -->
 
-<section id="investigacion">
+    <section id="investigacion">
 
-    <h2 class="section-title">
-        🔬 Investigación
-    </h2>
+        <h2 class="section-title">
+            🔬 Investigación
+        </h2>
 
-    <p class="section-subtitle">
-        Exploramos preguntas de Biología Molecular desde
-        diferentes perspectivas, utilizando herramientas
-        experimentales y moleculares.
-    </p>
+        <p class="section-subtitle">
+            Exploramos preguntas de Biología Molecular
+            mediante diferentes herramientas experimentales
+            y moleculares.
+        </p>
 
-    <div class="cards">
-
-        <div class="card">
-            <div class="card-icon">🧬</div>
-
-            <h3>ADN y genética</h3>
-
-            <p>
-                Estudiamos el material genético y los cambios
-                que permiten comprender diferentes procesos
-                biológicos.
-            </p>
-
-            <a href="#" class="card-link">
-                Conocer más →
-            </a>
-        </div>
+        <div class="cards">
 
 
-        <div class="card">
-            <div class="card-icon">🧪</div>
+            <div class="card">
 
-            <h3>Biología molecular</h3>
+                <div class="card-icon">
+                    🧬
+                </div>
 
-            <p>
-                Analizamos procesos biológicos a nivel
-                molecular mediante diferentes herramientas
-                experimentales.
-            </p>
+                <h3>
+                    ADN y genética
+                </h3>
 
-            <a href="#" class="card-link">
-                Conocer más →
-            </a>
-        </div>
+                <p>
+                    Estudiamos el material genético y los
+                    procesos moleculares que permiten
+                    comprender diferentes fenómenos biológicos.
+                </p>
 
+                <a href="#" class="card-link">
+                    Conocer más →
+                </a>
 
-        <div class="card">
-            <div class="card-icon">🧫</div>
-
-            <h3>Cáncer</h3>
-
-            <p>
-                Investigación de procesos moleculares
-                relacionados con el desarrollo y regulación
-                de enfermedades.
-            </p>
-
-            <a href="#" class="card-link">
-                Conocer más →
-            </a>
-        </div>
+            </div>
 
 
-        <div class="card">
-            <div class="card-icon">🥑</div>
+            <div class="card">
 
-            <h3>Alergias</h3>
+                <div class="card-icon">
+                    🧪
+                </div>
 
-            <p>
-                Proyectos relacionados con el estudio de
-                respuestas biológicas y sus mecanismos
-                moleculares frente al consumo de 
-                Persea Americana en infancias mexicanas.
-            </p>
+                <h3>
+                    Biología molecular
+                </h3>
 
-            <a href="#" class="card-link">
-                Conocer más →
-            </a>
-        </div>
+                <p>
+                    Analizamos procesos biológicos a nivel
+                    molecular mediante diferentes herramientas
+                    experimentales.
+                </p>
 
-    </div>
+                <a href="#" class="card-link">
+                    Conocer más →
+                </a>
 
-</section>
+            </div>
 
 
+            <div class="card">
 
-    <!-- CÓDIGO -->
+                <div class="card-icon">
+                    🧫
+                </div>
 
-<section id="codigo">
+                <h3>
+                    Cáncer
+                </h3>
 
-    <h2 class="section-title">
-        💻 Ciencia + Código
-    </h2>
+                <p>
+                    Investigación de procesos moleculares
+                    relacionados con el desarrollo y regulación
+                    de enfermedades.
+                </p>
 
-    <p class="section-subtitle">
-        La investigación también puede construirse con código.
-        Aquí reuniremos herramientas, análisis y proyectos
-        computacionales desarrollados en UliLab.
-    </p>
+                <a href="#" class="card-link">
+                    Conocer más →
+                </a>
 
-    <div class="cards">
+            </div>
 
-        <div class="card">
 
-            <div class="card-icon">🐍</div>
+            <div class="card">
 
-            <h3>Python</h3>
+                <div class="card-icon">
+                    🥑
+                </div>
 
-            <p>
-                Análisis de datos y herramientas desarrolladas
-                para apoyar proyectos de investigación.
-            </p>
+                <h3>
+                    Alergias
+                </h3>
 
-            <a href="#" class="card-link">
-                Ver código →
-            </a>
+                <p>
+                    Proyectos relacionados con el estudio de
+                    respuestas biológicas y sus mecanismos
+                    moleculares frente al consumo de
+                    <em>Persea americana</em> en infancias mexicanas.
+                </p>
+
+                <a href="#" class="card-link">
+                    Conocer más →
+                </a>
+
+            </div>
 
         </div>
 
-
-        <div class="card">
-
-            <div class="card-icon">📊</div>
-
-            <h3>Análisis de datos</h3>
-
-            <p>
-                Scripts y herramientas para procesar,
-                visualizar e interpretar datos biológicos.
-            </p>
-
-            <a href="#" class="card-link">
-                Explorar →
-            </a>
-
-        </div>
+    </section>
 
 
-        <div class="card">
+    <!-- =========================
+         CÓDIGO
+    ========================= -->
 
-            <div class="card-icon">🧬</div>
+    <section id="codigo">
 
-            <h3>Bioinformática</h3>
+        <h2 class="section-title">
+            💻 Ciencia + Código
+        </h2>
 
-            <p>
-                Proyectos computacionales relacionados con
-                el análisis de información biológica.
-            </p>
+        <p class="section-subtitle">
+            La investigación también puede construirse
+            con código. Aquí reuniremos herramientas,
+            análisis y proyectos computacionales
+            desarrollados en UliLab.
+        </p>
 
-            <a href="#" class="card-link">
-                Ver proyectos →
-            </a>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">🔓</div>
-
-            <h3>Código abierto</h3>
-
-            <p>
-                Compartimos herramientas y recursos para que
-                otros estudiantes e investigadores puedan
-                aprender y utilizarlos.
-            </p>
-
-            <a href="#" class="card-link">
-                GitHub →
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
+        <div class="cards">
 
 
+            <div class="card">
 
-    <!-- ESTUDIANTES -->
+                <div class="card-icon">
+                    🐍
+                </div>
 
-<section id="estudiantes">
+                <h3>
+                    Python
+                </h3>
 
-    <h2 class="section-title">
-        🎓 Para estudiantes
-    </h2>
+                <p>
+                    Análisis de datos y herramientas
+                    desarrolladas para apoyar proyectos
+                    de investigación.
+                </p>
 
-    <p class="section-subtitle">
-        La investigación comienza con una pregunta.
-        Aquí queremos acercar la Biología Molecular
-        a estudiantes con curiosidad por aprender y descubrir.
-    </p>
+                <a href="#" class="card-link">
+                    Ver código →
+                </a>
 
-    <div class="cards">
-
-        <div class="card">
-            <div class="card-icon">🔬</div>
-
-            <h3>Conoce la ciencia</h3>
-
-            <p>
-                Aprende sobre Biología Molecular y descubre
-                algunas de las preguntas que se investigan
-                en nuestro laboratorio.
-            </p>
-
-            <a href="#investigacion" class="card-link">
-                Explorar investigación →
-            </a>
-        </div>
+            </div>
 
 
-        <div class="card">
-            <div class="card-icon">📚</div>
+            <div class="card">
 
-            <h3>Recursos</h3>
+                <div class="card-icon">
+                    📊
+                </div>
 
-            <p>
-                Reuniremos materiales, publicaciones,
-                herramientas y recursos útiles para
-                estudiantes interesados en la ciencia.
-            </p>
+                <h3>
+                    Análisis de datos
+                </h3>
 
-            <a href="#" class="card-link">
-                Ver recursos →
-            </a>
-        </div>
+                <p>
+                    Scripts y herramientas para procesar,
+                    visualizar e interpretar datos biológicos.
+                </p>
 
+                <a href="#" class="card-link">
+                    Explorar →
+                </a>
 
-        <div class="card">
-            <div class="card-icon">💻</div>
-
-            <h3>Aprende con código</h3>
-
-            <p>
-                Explora herramientas y proyectos
-                computacionales utilizados para apoyar
-                la investigación.
-            </p>
-
-            <a href="#codigo" class="card-link">
-                Explorar código →
-            </a>
-        </div>
+            </div>
 
 
-        <div class="card">
-            <div class="card-icon">🚀</div>
+            <div class="card">
 
-            <h3>Únete a la investigación</h3>
+                <div class="card-icon">
+                    🧬
+                </div>
 
-            <p>
-                Conoce las oportunidades de formación,
-                proyectos y actividades del laboratorio.
-            </p>
+                <h3>
+                    Bioinformática
+                </h3>
 
-            <a href="#" class="card-link">
-                Próximamente →
-            </a>
-        </div>
+                <p>
+                    Proyectos computacionales relacionados
+                    con el análisis de información biológica.
+                </p>
 
-    </div>
+                <a href="#" class="card-link">
+                    Ver proyectos →
+                </a>
 
-</section>
+            </div>
 
 
-<!-- PUBLICACIONES -->
+            <div class="card">
 
-<section id="publicaciones">
+                <div class="card-icon">
+                    🔓
+                </div>
 
-    <h2 class="section-title">
-        📚 Publicaciones
-    </h2>
+                <h3>
+                    Código abierto
+                </h3>
 
-    <p class="section-subtitle">
-        Conoce los trabajos científicos desarrollados
-        por integrantes y colaboradores de UliLab.
-    </p>
+                <p>
+                    Compartimos herramientas y recursos
+                    para que otros estudiantes e investigadores
+                    puedan aprender y utilizarlos.
+                </p>
 
-    <div class="cards">
+                <a href="#" class="card-link">
+                    GitHub →
+                </a>
 
-        <div class="card">
-
-            <div class="card-icon">📄</div>
-
-            <h3>Artículos científicos</h3>
-
-            <p>
-                Consulta las publicaciones derivadas de
-                nuestros proyectos de investigación.
-            </p>
-
-            <a href="#" class="card-link">
-                Ver publicaciones →
-            </a>
+            </div>
 
         </div>
 
+    </section>
 
-        <div class="card">
 
-            <div class="card-icon">🎓</div>
+    <!-- =========================
+         PUBLICACIONES
+    ========================= -->
 
-            <h3>Tesis</h3>
+    <section id="publicaciones">
 
-            <p>
-                Trabajos de licenciatura y posgrado
-                realizados dentro de nuestras líneas
-                de investigación.
-            </p>
+        <h2 class="section-title">
+            📚 Publicaciones
+        </h2>
 
-            <a href="#" class="card-link">
-                Ver tesis →
-            </a>
+        <p class="section-subtitle">
+            Conoce los trabajos científicos desarrollados
+            por integrantes y colaboradores de UliLab.
+        </p>
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    📄
+                </div>
+
+                <h3>
+                    Artículos científicos
+                </h3>
+
+                <p>
+                    Consulta las publicaciones derivadas
+                    de nuestros proyectos de investigación.
+                </p>
+
+                <a href="#" class="card-link">
+                    Ver publicaciones →
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Tesis
+                </h3>
+
+                <p>
+                    Trabajos de licenciatura y posgrado
+                    realizados dentro de nuestras líneas
+                    de investigación.
+                </p>
+
+                <a href="#" class="card-link">
+                    Ver tesis →
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🔗
+                </div>
+
+                <h3>
+                    Recursos científicos
+                </h3>
+
+                <p>
+                    Enlaces a artículos, bases de datos,
+                    herramientas y otros recursos relacionados
+                    con nuestro trabajo.
+                </p>
+
+                <a href="#" class="card-link">
+                    Explorar recursos →
+                </a>
+
+            </div>
 
         </div>
 
+    </section>
 
-        <div class="card">
 
-            <div class="card-icon">🔗</div>
+    <!-- =========================
+         ESTUDIANTES
+    ========================= -->
 
-            <h3>Recursos científicos</h3>
+    <section id="estudiantes">
 
-            <p>
-                Enlaces a artículos, bases de datos,
-                herramientas y otros recursos relacionados
-                con nuestro trabajo.
-            </p>
+        <h2 class="section-title">
+            🎓 Para estudiantes
+        </h2>
 
-            <a href="#" class="card-link">
-                Explorar recursos →
-            </a>
+        <p class="section-subtitle">
+            La investigación comienza con una pregunta.
+            Aquí queremos acercar la Biología Molecular
+            a estudiantes con curiosidad por aprender y descubrir.
+        </p>
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🔬
+                </div>
+
+                <h3>
+                    Conoce la ciencia
+                </h3>
+
+                <p>
+                    Aprende sobre Biología Molecular y descubre
+                    algunas de las preguntas que se investigan
+                    en nuestro laboratorio.
+                </p>
+
+                <a href="#investigacion" class="card-link">
+                    Explorar investigación →
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Recursos
+                </h3>
+
+                <p>
+                    Reuniremos materiales, publicaciones,
+                    herramientas y recursos útiles para
+                    estudiantes interesados en la ciencia.
+                </p>
+
+                <a href="#" class="card-link">
+                    Ver recursos →
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Aprende con código
+                </h3>
+
+                <p>
+                    Explora herramientas y proyectos
+                    computacionales utilizados para apoyar
+                    la investigación.
+                </p>
+
+                <a href="#codigo" class="card-link">
+                    Explorar código →
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Únete a la investigación
+                </h3>
+
+                <p>
+                    Conoce las oportunidades de formación,
+                    proyectos y actividades del laboratorio.
+                </p>
+
+                <a href="#" class="card-link">
+                    Próximamente →
+                </a>
+
+            </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
 
-    <!-- TIKTOK -->
+    <!-- =========================
+         EQUIPO
+    ========================= -->
+
+    <section id="equipo">
+
+        <h2 class="section-title">
+            👩‍🔬 Nuestro equipo
+        </h2>
+
+        <p class="section-subtitle">
+            Conoce a las personas que forman parte
+            de UliLab y hacen posible nuestra investigación.
+        </p>
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    👨‍🔬
+                </div>
+
+                <h3>
+                    Investigadores
+                </h3>
+
+                <p>
+                    Conoce a los investigadores responsables
+                    de las diferentes líneas y proyectos
+                    científicos del laboratorio.
+                </p>
+
+                <a href="#" class="card-link">
+                    Conocer al equipo →
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Estudiantes
+                </h3>
+
+                <p>
+                    Estudiantes de licenciatura y posgrado
+                    que participan en proyectos de investigación
+                    y formación científica.
+                </p>
+
+                <a href="#" class="card-link">
+                    Ver estudiantes →
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🧪
+                </div>
+
+                <h3>
+                    Colaboradores
+                </h3>
+
+                <p>
+                    Personas e instituciones que colaboran
+                    con UliLab en proyectos científicos
+                    y académicos.
+                </p>
+
+                <a href="#" class="card-link">
+                    Ver colaboradores →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TIKTOK
+    ========================= -->
 
     <section id="tiktok" class="about">
 
@@ -731,6 +1104,7 @@
         <p>
             La ciencia también puede ser divertida,
             accesible y estar en redes sociales.
+
             Próximamente encontrarás aquí nuestros
             contenidos de divulgación científica.
         </p>
@@ -738,75 +1112,94 @@
         <br>
 
         <a href="#" class="button">
-            Visitar TikTok
+            TikTok · Próximamente
         </a>
 
     </section>
 
-<!-- CONTACTO -->
 
-<section id="contacto">
+    <!-- =========================
+         CONTACTO
+    ========================= -->
 
-    <h2 class="section-title">
-        📍 Ubicación y contacto
-    </h2>
+    <section id="contacto">
 
-    <p class="section-subtitle">
-        Encuentra UliLab en la Universidad Autónoma Metropolitana,
-        Unidad Iztapalapa.
-    </p>
+        <h2 class="section-title">
+            📍 Ubicación y contacto
+        </h2>
 
-    <div class="cards">
+        <p class="section-subtitle">
+            Encuentra UliLab en la Universidad Autónoma
+            Metropolitana, Unidad Iztapalapa.
+        </p>
 
-        <div class="card">
+        <div class="cards">
 
-            <div class="card-icon">📍</div>
 
-            <h3>Ubicación</h3>
+            <div class="card">
 
-            <p>
-                Universidad Autónoma Metropolitana<br>
-                Unidad Iztapalapa<br>
-                Ciudad de México
-            </p>
+                <div class="card-icon">
+                    📍
+                </div>
+
+                <h3>
+                    Ubicación
+                </h3>
+
+                <p>
+                    Universidad Autónoma Metropolitana<br>
+                    Unidad Iztapalapa<br>
+                    Ciudad de México
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    ✉️
+                </div>
+
+                <h3>
+                    Contacto
+                </h3>
+
+                <p>
+                    Próximamente encontrarás aquí
+                    el correo oficial de contacto
+                    de UliLab.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🔗
+                </div>
+
+                <h3>
+                    Enlaces
+                </h3>
+
+                <p>
+                    Sitio institucional, redes sociales
+                    y otros espacios donde puedes
+                    conocer nuestro trabajo.
+                </p>
+
+            </div>
 
         </div>
 
-
-        <div class="card">
-
-            <div class="card-icon">✉️</div>
-
-            <h3>Contacto</h3>
-
-            <p>
-                Próximamente encontrarás aquí
-                el correo oficial de contacto
-                de UliLab.
-            </p>
-
-        </div>
+    </section>
 
 
-        <div class="card">
-
-            <div class="card-icon">🔗</div>
-
-            <h3>Enlaces</h3>
-
-            <p>
-                Sitio institucional, redes sociales
-                y otros espacios donde puedes
-                conocer nuestro trabajo.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-    <!-- PIE DE PÁGINA -->
+    <!-- =========================
+         PIE DE PÁGINA
+    ========================= -->
 
     <footer>
 
@@ -815,10 +1208,13 @@
         </p>
 
         <p>
-            Universidad Autónoma Metropolitana · Unidad Iztapalapa
+            Universidad Autónoma Metropolitana ·
+            Unidad Iztapalapa
         </p>
 
     </footer>
 
+
 </body>
+
 </html>
